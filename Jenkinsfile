@@ -10,7 +10,12 @@ pipeline{
             steps{
                 bat 'mvn test'
             }
-        }        
+        }
+        stage('Maven Build'){
+            steps{
+                bat 'mvn package'
+            }
+        }         
         stage('Maven Deploy'){
             steps{
                 echo "Deploying the war file to the server"
